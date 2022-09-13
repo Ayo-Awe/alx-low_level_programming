@@ -1,6 +1,6 @@
 #include "main.h"
 
-void print_number(int);
+#include <stdio.h>
 
 /**
  * print_to_98 - counts from input n to 98
@@ -18,7 +18,7 @@ void print_to_98(int n)
 		for (i = n; i <= 98;
 				i++)
 		{
-			print_number(i);
+			printf("%d", i);
 
 			if (i != 98)
 			{
@@ -35,7 +35,7 @@ void print_to_98(int n)
 		for (i = n; i >= 98;
 			i--)
 		{
-			print_number(i);
+			printf("%d", i);
 
 			if (i != 98)
 			{
@@ -50,33 +50,3 @@ void print_to_98(int n)
 	_putchar('\n');
 }
 
-/**
- * print_number - prints an integer
- * @n: 2 digit integer
- *
- * Return: void
- */
-
-void print_number(int n)
-{
-
-	int rem;
-	int div = n;
-
-	if (n < 10)
-	{
-		_putchar(' ');
-		_putchar('0' + n);
-	}
-	else
-	{
-		while (div != 0)
-		{
-			rem = div % 10;
-			_putchar('0' +
-				rem);
-			div /= 10;
-		}
-
-	}
-}
