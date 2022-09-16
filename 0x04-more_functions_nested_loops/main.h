@@ -1,4 +1,5 @@
 void _putchar(int);
+void print_most_numbers(void);
 void print_numbers(void);
 int mul(int a, int b);
 int _isupper(int c);
