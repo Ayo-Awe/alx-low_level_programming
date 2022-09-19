@@ -11,7 +11,13 @@ int  _strlen(char *s)
 {
 	int size_of_array;
 
-	size_of_array = sizeof(s) - 1;
+	size_of_array = 0;
+
+	while (*(s + size_of_array) != '\0')
+	{
+		size_of_array++;
+	}
+
 
 	return (size_of_array);
 }
