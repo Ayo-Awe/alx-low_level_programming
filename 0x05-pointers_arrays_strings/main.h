@@ -1,4 +1,5 @@
 void reset_to_98(int *n);
+void print_array(int*, int);
 void swap_int(int*, int*);
 int _strlen(char*);
 void _puts(char*);
