@@ -8,7 +8,7 @@
  * Return: pointer to dest
  */
 
-char *_strcopy(char *dest, char *src)
+char _strcopy(char *dest, char *src)
 {
 	int i;
 
