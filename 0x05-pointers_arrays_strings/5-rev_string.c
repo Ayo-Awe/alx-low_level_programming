@@ -1,6 +1,6 @@
 #include "main.h"
 #include <string.h>
-
+#include <stdio.h>
 /**
  * rev_string - reverses a string
  * @s: string
@@ -10,40 +10,18 @@
 
 void  rev_string(char *s)
 {
-	int i, j;
-	int len = _strlen(s);
-	char *rev = "";
+	int i;
+	int n = strlen(s) - 1;
+	char temp;
 
-	strcpy(rev, s);
-
-	j = 0;
-
-	for (i = len - 1; i >= 0; i--)
+	for (i = 0; i <= (n / 2); i++)
 	{
-		rev[j] = s[i];
-		
-	}
+		temp = s[n - i];
 
-	strcpy(s, rev);
+		s[n - i] = s[i];
+
+		s[i] = temp;
+	}
 
 }
 
-/**
- * _strlen - returns length of string
- * @s: string
- *
- * Return: length of string
- */
-
-int _strlen(char *s)
-{
-	int len;
-
-	len = 0;
-	while (*(s + len) != '\0')
-	{
-		len++;
-	}
-
-	return (len);
-}
