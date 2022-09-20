@@ -7,4 +7,5 @@ void print_rev(char*);
 void rev_string(char*);
 void puts2(char*);
 void _putchar(char);
+char *_strcpy(char *dest, char *src);
 void puts_half(char*);
