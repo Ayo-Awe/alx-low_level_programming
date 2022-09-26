@@ -12,28 +12,33 @@ int contains(char *s, char c);
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i;
+	unsigned int i, j;
+	int start;
 
 	i = 0;
+	j = 0;
+	start = 0;
+
 
 	while (s[i] != '\0')
 	{
 		if (contains(accept, s[i]))
 		{
-			i++;
+			j++;
+			start = 1;
 		}
-		else
-		{
-			/* If not first occurence of substring*/
-			if (i > 0)
-				return (i);
 
-			/* Else first occurence of substring*/
-			i++;
+		if (contains(accept, s[i]) == 0 && start > 0)
+		{
+			return (j);
 		}
+
+
+
+		i++;
 	}
 
-	return (i);
+	return (j);
 }
 
 /**
