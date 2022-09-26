@@ -1,21 +1,24 @@
 #include "main.h"
-#include <stddef.h>
 
 /**
  * _strchr - finds the occurence of a char c
  * @s: string
- * @c: char
+ * @accept: substring
  *
  * Return: pointers to occurence of c or NULL if none
  */
 
-char *_strchr(char *s, char c)
+unsigned int _strspn(char *s, char *accept)
 {
-	while (*s != '\0')
+    int i;
+    
+    i = 0;
+
+	while (s[i] != '\0')
 	{
-		if (*s == c)
-			return (s);
-		s++;
+		if (s[i] == c)
+			return (s+i);
+		i++;
 	}
 
 	return (NULL);
