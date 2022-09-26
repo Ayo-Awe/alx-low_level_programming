@@ -12,7 +12,7 @@ int contains(char *s, char c);
 
 unsigned int _strspn(char *s, char *accept)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
 
