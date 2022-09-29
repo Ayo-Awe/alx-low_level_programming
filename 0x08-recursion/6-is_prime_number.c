@@ -19,9 +19,9 @@ int is_prime_number(int n)
 }
 
 /**
- * check_sqrt - finds square root of number
+ * test_prime - tests if a number is a prime number recursively
  * @n: number
- * @sub: previous odd number to subtract
+ * @divisor: number to divide n by
  *
  * Return: natural square root if it exist otherwise negative number
  */
@@ -29,7 +29,7 @@ int test_prime(int n, int divisor)
 {
 
 	int rem;
-	
+
 	rem = n % divisor;
 
 	if (divisor == n)
@@ -41,13 +41,12 @@ int test_prime(int n, int divisor)
 		return (1);
 	}
 
-	if (rem == 0 )
+	if (rem == 0)
 	{
 		return (0);
 	}
 
-	
-	
+
+
 	return (test_prime(n, ++divisor));
-	
 }
