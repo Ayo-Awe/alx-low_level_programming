@@ -48,6 +48,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		{
 			c_p[i] = c_ptr[i];
 		}
+
+		free(ptr);
 	}
 	return (p);
 }
