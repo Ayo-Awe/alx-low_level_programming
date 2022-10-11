@@ -1,5 +1,5 @@
 #include "dog.h"
-#include <stdlib>
+#include <stdlib.h>
 
 /**
  * init_dog - intialises the value of a dog struct
@@ -13,7 +13,7 @@
 
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	if (dog == NULL)
+	if (d == NULL)
 		return;
 	d->name = name;
 	d->age = age;
