@@ -10,6 +10,10 @@ struct dog
     char *owner;
     float age;
 };
+/**
+ * dog_t - type definition for dog
+*/
+typedef dog_t struct dog;
 void init_dog(struct dog *, char *, float, char *);
 void print_dog(struct dog *d);
 
