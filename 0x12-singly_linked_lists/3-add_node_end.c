@@ -24,26 +24,51 @@ list_t *add_node_end(list_t **head, const char *str)
 	if (new == NULL)
 		return (NULL);
 
-	new->str = strdup(str);
-	new->len = strlen(str);
-	new->next = NULL;
+	if (str)
+	{
+		new->str = strdup(str);
+		new->len = strlen(str);
+		new->next = NULL;
+	}
+	else
+	{
+		new->str = NULL;
+		new->next = NULL;
+	}
 
 	current = *head;
 
 	/* make new head if head is null */
-	if (current == NULL)
+	if (*head == NULL)
 	{
 		*head = new;
 		return (new);
 	}
 
 	/* Get last node */
-	while (current->next != NULL)
-	{
-		current = current->next;
-	}
+	current = get_last_node(*head);
 
 	current->next = new;
 
 	return (new);
+}
+
+
+/**
+ * get_last_node - returns the last node of a list
+ * @head: head of the list
+ *
+ * Return: returns pointer to the last node of the list
+*/
+list_t *get_last_node(list_t *head)
+{
+	list_t *current;
+
+	current = head;
+
+	/* Get last node i.e node where next is NULL */
+	while (current->next != NULL)
+		current = current->next;
+
+	return (current);
 }
