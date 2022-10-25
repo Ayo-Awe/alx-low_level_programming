@@ -16,7 +16,7 @@ void free_listint2(listint_t **head)
 	/* Set current node to head */
 	current = *head;
 
-	if (!current)
+	if (!current || !head)
 		return;
 
 	while (current)
