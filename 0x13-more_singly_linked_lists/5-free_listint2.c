@@ -13,10 +13,13 @@ void free_listint2(listint_t **head)
 {
 	listint_t *current, *next;
 
+	if (!head)
+		return;
+
 	/* Set current node to head */
 	current = *head;
 
-	if (!current || !head)
+	if (!current)
 		return;
 
 	while (current)
