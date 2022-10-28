@@ -6,4 +6,5 @@ int _strlen(char *s);
 void _putchar(char c);
 void print_binary_recur(unsigned long int b);
 void print_binary(unsigned long int n);
+int get_bit(unsigned long int n, unsigned int index);
 #endif
