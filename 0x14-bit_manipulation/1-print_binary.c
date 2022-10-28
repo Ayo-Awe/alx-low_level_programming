@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * print_binary - prints an integer as a binary
+ * @n: number to print
+ *
+ * Return: void
+*/
 void print_binary(unsigned long int n)
 {
 
@@ -15,11 +21,17 @@ void print_binary(unsigned long int n)
 		return;
 	}
 
-	print_recursion(n);
+	print_binary_recur(n);
 
 }
 
-void print_recursion(unsigned long int b)
+/**
+ * print_binary_recur - prints an integer as binary via recurion
+ * @b: number to print
+ *
+ * Return: void
+*/
+void print_binary_recur(unsigned long int b)
 {
 	int rem = 0;
 	unsigned long int shift;
@@ -29,10 +41,10 @@ void print_recursion(unsigned long int b)
 		return;
 	}
 
-	print_recursion(b >> 1);
+	print_binary_recur(b >> 1);
 
 	shift = b >> 1;
 	rem = b - (2 * shift);
-	_putchar( rem + '0');
+	_putchar(rem + '0');
 
 }
