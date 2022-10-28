@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stddef.h>
-#include <stdio.h>
 
 /**
  * clear_bit - get the value of a bit
@@ -25,7 +24,6 @@ int clear_bit(unsigned long int *n, unsigned int index)
 
 	if (and == mask)
 	{
-		printf("In here\n");
 		/* if bit at index is zero set it to 1*/
 		*n -= mask;
 		return (1);
