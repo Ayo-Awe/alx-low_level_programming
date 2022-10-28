@@ -26,11 +26,11 @@ int set_bit(unsigned long int *n, unsigned int index)
 	{
 		/* if bit at index is zero set it to 1*/
 		*n = *n + mask;
-		return *n;
+		return (1);
 	}
 
 	/* if bit at index was alreay 1, return as is*/
-	return *n;
+	return (1);
 }
 
 /**
