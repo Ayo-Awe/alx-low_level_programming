@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+int length_of_list(const dlistint_t *h);
+
 /**
  * insert_dnodeint_at_index - insert node at index
  * @idx: index of node to be retrieved
@@ -26,16 +28,12 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new_node->prev = NULL;
 
 	current = *h;
-	if (idx == 0)
-	{
-		if (*h == NULL)
-			return (*h = new_node);
 
-		*h = new_node;
-		new_node->next = current;
-		current->prev = new_node;
-		return (new_node);
-	}
+	if (idx == 0)
+		return (add_dnodeint(h, n));
+
+	if ((int)idx == length_of_list(*h))
+		return (add_dnodeint_end(h, n));
 
 	while (current)
 	{
@@ -47,9 +45,32 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			(new_node->prev)->next = new_node;
 			return (new_node);
 		}
+
 		current_index++;
 		current = current->next;
 	}
 	free(new_node);
 	return (NULL);
+}
+
+/**
+ * length_of_list - returns length of ist
+ * @h: head of list
+ *
+ * Return: size of list
+ */
+int length_of_list(const dlistint_t *h)
+{
+	dlistint_t *current = NULL;
+	int count = 0;
+
+	current = (dlistint_t *)h;
+
+	while (current)
+	{
+		current = current->next;
+		count++;
+	}
+
+	return (count);
 }
