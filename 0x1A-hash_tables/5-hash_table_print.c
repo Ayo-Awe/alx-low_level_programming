@@ -29,6 +29,7 @@ void hash_table_print(const hash_table_t *ht)
 /**
  * print_list - prints all the nodes in a linked list
  * @head: head of linked list
+ * @print_count: pointer to number of key-value pairs already printed
  *
  * Return: void
  */
@@ -52,6 +53,7 @@ void print_list(hash_node_t *head, unsigned int *print_count)
 /**
  * print_node - prints the value of a single node in a linked list
  * @node: pointer to node of linked list
+ * @print_count: number of key-value pairs already printed
  *
  * Return: void
  */
